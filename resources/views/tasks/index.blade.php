@@ -83,7 +83,7 @@
     th, td {
         padding: 10px;
         text-align: left;
-        border-bottom: 1px;
+        border-bottom: 1px solid #dee2e6;
     }
     th {
         background-color: mediumblue;
@@ -96,4 +96,26 @@
 </head>
 <body>
 <div class="container">
-<h1>Task List 1.0</h1>
+
+    <h1>Task List 1.0</h1>
+    <!-- some quick code to  pop up a success message -->
+    <?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success">
+        <?php echo htmlspecialchars($_SESSION['success']); ?>
+    </div>
+    <?php endif; ?>
+
+        <!-- Show an error message -->
+    <?php if (isset($_SESSION['error'])): ?>
+<div class="alert alert-danger">
+    <?php echo htmlspecialchars($_SESSION['error']); ?>
+</div>
+    <?php endif; ?>
+
+<!-- Get to the task creator page -->
+    <a href="/tasks/create" class="btn btn-primary"> Create New Task</a>
+
+    <!-- Tomorrow continue reading docu on built in php methods and add another to check if the stack is empty and even add a default task -->
+    <?php if(empty($tasks)): ?>
+    <p>You Have 0 Tasks</p>
+
