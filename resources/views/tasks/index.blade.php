@@ -119,3 +119,33 @@
     <?php if(empty($tasks)): ?>
     <p>You Have 0 Tasks</p>
 
+    <?php else: ?>
+<!-- print the list to the screen -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Time to Complete</th>
+                <th>Completed</th>
+                <th>Task Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach($tasks as $task): ?>
+     <tr>
+         <td><?php echo htmlspecialchars($task->title); ?></td>
+         <td><?php echo htmlspecialchars($task->description); ?></td>
+         <td><?php echo htmlspecialchars($task->time_to_complete); ?> mins</td>
+         <td><?php echo $task->completed ? 'Yes' : 'No'; ?></td>
+         <td>
+            <a href="<?php echo route('tasks.edit', $task->id); ?>" class="btn btn-secondary"> Edit</a>
+             <form action="<?php echo route('tasks.destroy', $task->id); ?>" method="post" style="display: inline;">
+                 <?php echo method_field('DELETE'); ?>
+                 <?php echo csrf_field(); ?>
+
+
+
+
+
