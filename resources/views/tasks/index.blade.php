@@ -99,27 +99,28 @@
 
     <h1>Task List 1.0</h1>
     <!-- some quick code to  pop up a success message -->
-    <?php if (isset($_SESSION['success'])): ?>
-    <div class="alert alert-success">
-        <?php echo htmlspecialchars($_SESSION['success']); ?>
+
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{session('success') }}
     </div>
-    <?php endif; ?>
+    @endif
 
         <!-- Show an error message -->
-    <?php if (isset($_SESSION['error'])): ?>
+    @if(session('error'))
 <div class="alert alert-danger">
-    <?php echo htmlspecialchars($_SESSION['error']); ?>
+    {{session('error') }}
 </div>
-    <?php endif; ?>
+    @endif
 
 <!-- Get to the task creator page -->
-    <a href="/tasks/create" class="btn btn-primary"> Create New Task</a>
+         <a href="{{route('tasks.create')}}" class="btn btn-primary">Create New Task</a>
 
     <!-- Tomorrow continue reading docu on built in php methods and add another to check if the stack is empty and even add a default task -->
-    <?php if(empty($tasks)): ?>
+    @if($tasks->isEmpty())
     <p>You Have 0 Tasks</p>
 
-    <?php else: ?>
+    @else
 <!-- print the list to the screen -->
 
     <table>
@@ -133,25 +134,25 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach($tasks as $task): ?>
+        @foreach($tasks as $task)
      <tr>
-         <td><?php echo htmlspecialchars($task->title); ?></td>
-         <td><?php echo htmlspecialchars($task->description); ?></td>
-         <td><?php echo htmlspecialchars($task->time_to_complete); ?> mins</td>
-         <td><?php echo $task->completed ? 'Yes' : 'No'; ?></td>
+         <td>{{ $task->title }}</td>
+         <td>{{ $task->description }}</td>
+         <td>{{ $task->time_to_complete }} mins</td>
+         <td>{{ $task->completed ? 'Yes' : 'No' }}</td>
          <td>
-            <a href="<?php echo route('tasks.edit', $task->id); ?>" class="btn btn-secondary"> Edit</a>
-             <form action="<?php echo route('tasks.destroy', $task->id); ?>" method="post" style="display: inline;">
-                 <?php echo method_field('DELETE'); ?>
-                 <?php echo csrf_field(); ?>
+            <a href="{{route('tasks.edit', $task->id) }} " class="btn btn-secondary">Edit</a>
+             <form action = "{{route('tasks.destroy', $task->id)}} " method="POST" style="display: inline;">
+                 @csrf
+                 @method('DELETE')
                  <button type="submit" class="btn btn-danger">Delete</button>
              </form>
          </td>
      </tr>
-        <?php endforeach; ?>
+        @endforeach
         </tbody>
     </table>
-    <?php endif; ?>
+    @endif
 </div>
 </body>
 </html>
