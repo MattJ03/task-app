@@ -144,6 +144,18 @@
              <form action="<?php echo route('tasks.destroy', $task->id); ?>" method="post" style="display: inline;">
                  <?php echo method_field('DELETE'); ?>
                  <?php echo csrf_field(); ?>
+                 <button type="submit" class="btn btn-danger">Delete</button>
+             </form>
+         </td>
+     </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php endif; ?>
+</div>
+</body>
+</html>
+
 
 
 
