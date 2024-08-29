@@ -81,14 +81,25 @@
         </div>
     @endif
 
-    @if(session($errors->any()))
+    @if($errors->any())
         <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li> {{$error}} </li>
-            @endforeach
-            </ul>
+        <ul>
+        @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+@endforeach
+        </ul>
         </div>
+@endif
+
+     <form action="{{route('tasks.store') }}" method="POST">
+         @csrf
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required>
+        </div>
+
+
+
 
 
 </body>
