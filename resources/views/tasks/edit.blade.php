@@ -40,7 +40,32 @@
             border-radius: 4px;
             border: 1px, #cccccc;
         }
+.btn {
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin: 6px;
 
+  }
+.btn-primary {
+    background-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-secondary {
+    background-color: #95999c;
+}
+.btn-secondary:hover {
+    background-color: #74787e;
+}
 
     </style>
 
