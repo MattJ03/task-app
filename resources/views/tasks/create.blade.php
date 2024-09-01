@@ -17,7 +17,7 @@
          padding: 20px;
          background-color: #ffffff; /* basic white background*/
          border-radius: 5px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*if ive implemented this right this could look cool*/
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
      }
      h1 {
          font-size: 20px;
@@ -107,6 +107,11 @@
          <label for="description">Description</label>
          <textarea name="description" id="description"></textarea>
         </div>
+         <div class="form-group">
+             <label for="due_date">Date to be Completed:</label>
+             <input type="date" id="due_date" name="due_date">
+         </div>
+
          <div class="form-group">
              <label for="time_to_complete">Time to Complete (mins)</label>
                 <input type="number" name="time_to_complete" id="time_to_complete" required min="1">
