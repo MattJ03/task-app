@@ -121,7 +121,7 @@
     <p>You Have 0 Tasks</p>
 
     @else
-<!-- print the list to the screen -->
+<!-- Show the full list-->
 
     <table>
         <thead>
