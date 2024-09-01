@@ -66,8 +66,33 @@
 .btn-secondary:hover {
     background-color: #74787e;
 }
-
+.btn-danger {
+    background-color: red;
+}
+.btn-danger:hover {
+    background-color: darkred;
+}
     </style>
-
 </head>
+<body>
+<div class="container">
+    <h1>Edit Task</h1>
+    <form action="{{ route('tasks.update', $task->id) }}" method="POST">
+        @csrf
+        @method('put')
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="{{old('title', $task->title)}}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description">{{old('description', $Task->description) }}</textarea>
+        </div>
+        <div class="form-group"
+        </div>
+
+    </form>
+</div>
+</body>
 </html>
