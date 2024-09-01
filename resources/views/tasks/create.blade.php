@@ -118,7 +118,7 @@
                          <option value="0">No</option>
                      </select>
          </div>
-         <button type="submit" class="btn btn-primary">Cresate New Tsak</button>
+         <button type="submit" class="btn btn-primary">Create New Task</button>
          <a href="{{route('tasks.index') }}" class="btn btn-primary">Back to List of Tasks</a>
      </form>
 </div>
