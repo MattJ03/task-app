@@ -87,11 +87,11 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description">{{old('description', $Task->description) }}</textarea>
+            <textarea id="description" name="description">{{old('description', $task->description) }} </textarea>
         </div>
         <div class="form-group">
             <label for="date">Due Date</label>
-            <input type="date" id="due_date" name="due_date" value="{{old('due_date', $Task->due_date ? $task->due_date->format('y:m:d') : '') }}">
+            <input type="date" id="due_date" name="due_date" value="{{old('due_date', $task->due_date ? $task->due_date->format('y:m:d') : '') }}">
         </div>
         <div class="form-group">
             <label for="time_to_complete">Time to complete task</label>

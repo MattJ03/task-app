@@ -1,8 +1,13 @@
 <?php
-
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-// should map to all needed pages and complte CRUD from TC
-route::get('/', [TaskController::class, 'index']);
+// Define the root route to redirect to tasks.index
+Route::get('/', function () {
+return redirect()->route('tasks.index');
+});
+
+// Resource route for TaskController
 Route::resource('tasks', TaskController::class);
+
+
