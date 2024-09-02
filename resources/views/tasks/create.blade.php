@@ -113,7 +113,7 @@
          </div>
 
          <div class="form-group">
-             <label for="time_to_complete">Time to Complete (mins)</label>
+             <label for="time_to_complete">Time to Complete (minutes)</label>
                 <input type="number" name="time_to_complete" id="time_to_complete" required min="1">
          </div>
          <div class="form-group">

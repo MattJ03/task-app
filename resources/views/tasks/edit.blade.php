@@ -38,7 +38,7 @@
             width: 100%;
             margin-bottom: 10px;
             border-radius: 4px;
-            border: 1px, #cccccc;
+            border: 1px solid #cccccc;
         }
 .btn {
     padding: 10px 20px;
@@ -89,9 +89,17 @@
             <label for="description">Description</label>
             <textarea id="description" name="description">{{old('description', $Task->description) }}</textarea>
         </div>
-        <div class="form-group"
+        <div class="form-group">
+            <label for="date">Due Date</label>
+            <input type="date" id="due_date" name="due_date" value="{{old('due_date', $Task->due_date ? $task->due_date->format('y:m:d') : '') }}">
+        </div>
+        <div class="form-group">
+            <label for="time_to_complete">Time to complete task</label>
+            <input type="number" id="time_to_complete" name="time_to_complete value="{{old('time_to_complete', $Task->time_to_complete)}}">
         </div>
 
+        <button type="submit" class="btn btn-primary">Update Task</button>
+        <a href="{{route('tasks.index')}}" class="btn btn-secondary">Cancel Updates</a>
     </form>
 </div>
 </body>
