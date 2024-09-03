@@ -17,6 +17,8 @@
             max-width: 800px;
             margin: 20px auto;
             padding-bottom: 20px;
+            padding-left: 20px;
+            padding-top: 20px;
             background-color: #FFFFFF;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
