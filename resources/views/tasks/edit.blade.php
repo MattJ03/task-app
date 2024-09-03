@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Tasks</title>
     <style>
-        .body {
+        body {
             font-family: Helvetica, Arial, sans-serif;
             font-weight: bold;
             background-color: #0056b3;
