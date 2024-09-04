@@ -13,6 +13,12 @@ class TaskController extends Controller
         $tasks = Task::all(); // Fetch all tasks
         return view('tasks.index', ['tasks' => $tasks]);
     }
+     public function show(Task $task) {
+        // $task = Task::findOrFail($id);
+         return view('tasks.show', ['task' => $task]);
+
+        // dd($task);
+     }
 
     // Form for creating more tasks to add
     public function create()
