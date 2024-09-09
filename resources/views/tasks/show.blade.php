@@ -12,8 +12,12 @@
         <form action="route {{'tasks.destroy', $task->id }}" method="POST" style="display: inline;">
             @csrf
             @method('DELETE');
-            <button type="submit" class="btn btn"
+            <button type="submit" class="btn btn-danger">Delete Task</button>
         </form>
+
+        //back to the index page
+        <a href="route {{'tasks.index'}}" class="btn btn-secondary">Back to Home</a>
+
 
     </div>
 </x-layouts.app>
