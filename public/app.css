@@ -36,10 +36,10 @@ h1 {
     background-color: #0056b3;
 }
 .btn-secondary {
-    background-color: #95999c;
+    background-color: yellow;
 }
 .btn-secondary:hover {
-    background-color: #74787e;
+    background-color: yellowgreen;
 }
 .btn-danger {
     background-color: #a40000;
