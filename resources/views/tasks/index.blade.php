@@ -32,6 +32,7 @@
                     <td>{{ $task->completed ? 'Yes' : 'No' }}</td>
                     <td>
                         <a href="{{route('tasks.edit', $task->id) }} " class="btn btn-secondary">Edit</a>
+                        <a href="route {{'tasks.show', $task->id}}" class="btn btn-secondary">View Task</a>
                         <form action="{{route('tasks.destroy', $task->id)}} " method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
