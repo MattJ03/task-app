@@ -12,7 +12,7 @@
 
 <header>
     <nav>
-        This is the nav bar
+        Task List 1.0
     </nav>
 </header>
 
