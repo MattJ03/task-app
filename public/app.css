@@ -41,6 +41,12 @@ h1 {
 .btn-secondary:hover {
     background-color: #74787e;
 }
+.btn-danger {
+    background-color: #a40000;
+}
+.btn-danger:hover {
+    background-color: darkred;
+}
 .alert {
     padding: 10px;
     margin-bottom: 18px;

@@ -8,10 +8,11 @@
 
         //button to edit the task
         <a href="route {{'tasks.edit', $task->id }}" class="btn btn-primary">Edit Task</a>
+
         <form action="route {{'tasks.destroy', $task->id }}" method="POST" style="display: inline;">
             @csrf
             @method('DELETE');
-            <button class="btn btn-primary">Delete Task</button>
+            <button type="submit" class="btn btn"
         </form>
 
     </div>
