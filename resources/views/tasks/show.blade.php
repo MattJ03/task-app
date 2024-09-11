@@ -18,6 +18,5 @@
         <!--button to go back to the home page-->
         <a href="route {{'tasks.index'}}" class="btn btn-secondary">Back to Home</a>
 
-
     </div>
 </x-layouts.app>
