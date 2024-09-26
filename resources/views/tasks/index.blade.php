@@ -1,6 +1,9 @@
 <x-layouts.app>
     <h1>Task List 1.0</h1>
-    <!-- some quick code to  pop up a success message -->
+    <form method="GET" action="{{ route('tasks.index')}}">
+        <input type="text" name="search" placeholder="Search Tasks...">
+        <button type="submit" class="btn btn-secondary">Search</button>
+    </form>
 
 
     <!-- Get to the task creator page -->
