@@ -43,6 +43,7 @@
             @endforeach
             </tbody>
         </table>
+        <a href="{{ route('login') }}" class="btn btn-secondary">Back to login</a>
     @endif
 
 </x-layouts.app>
