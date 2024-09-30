@@ -8,10 +8,18 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     // Show the user their tasks
-    public function index()
+    public function index(Request $request)
     {
-        $tasks = Task::all(); // Fetch all tasks
-        return view('tasks.index', ['tasks' => $tasks]);
+       $search = $request->input('search');
+       if($search) {
+         $tasks = Task::where('title', 'like', "%{$search}%")
+             ->orWhere('description', 'like', "%{$search}%")
+             ->get();
+       }
+       else {
+           $tasks = Task::all();
+       }
+       return view('tasks.index', ['tasks' => $tasks]);
     }
      public function show(Task $task) {
         // $task = Task::findOrFail($id);
