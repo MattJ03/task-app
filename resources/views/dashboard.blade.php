@@ -12,6 +12,7 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+            <a href="{{ route('tasks.index') }}" class="btn btn-primary">Move to Index</a>
         </div>
     </div>
 </x-app-layout>
