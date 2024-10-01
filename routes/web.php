@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     //route for my searching
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
-
+    Route::resource('tasks', TaskController::class)->except('index');
     Route::resource('tasks', TaskController::class);
 
     Route::get('/dashboard', function () {
