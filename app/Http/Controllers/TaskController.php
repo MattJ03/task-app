@@ -22,7 +22,7 @@ class TaskController extends Controller
        return view('tasks.index', ['tasks' => $tasks]);
     }
      public function show(Task $task) {
-        // $task = Task::findOrFail($id);
+
          return view('tasks.show', ['task' => $task]);
 
         //dd($task);
